@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<title>About Us</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+</script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<style>
+        html,
+        body,
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+                font-family: "Raleway", sans-serif
+        }
+</style>
+</head>
+
+<body class="w3-light-grey">
+
+        <!-- Top container -->
+        <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+                <button class="w3-bar-item w3-button w3-hide-large w3-hover-none w3-hover-text-light-grey"
+                        onclick="w3_open();"><i class="fa fa-bars"></i>  Menu</button>
+        </div>
+
+        <!-- Sidebar/menu -->
+        <nav class="w3-sidebar w3-collapse w3-white w3-animate-left" style="z-index:3;width:300px;" id="mySidebar"><br>
+                <div class="w3-container w3-row">
+                        <div class="w3-col s4">
+                        </div>
+                        <div class="w3-col s8 w3-bar">
+                                <span>Welcome, <strong>Administrator!! </strong></span>
+                        </div>
+                </div>
+                <hr>
+                <div class="w3-container">
+                        <h5><strong>Dashboard</strong></h5>
+                </div>
+                <div class="w3-bar-block">
+                        <a href="#"
+                                class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"
+                                onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close
+                                Menu</a>
+                        <a href="../index.html" class="w3-bar-item w3-button w3-padding"><i
+                                        class="fa fa-bullseye fa-fw"></i> 
+                                Overview</a>
+                        <a href="../hotel1.html" class="w3-bar-item w3-button w3-padding"><i
+                                        class="fa fa-bank fa-fw"></i> Phuket Orchid Resort</a>
+                        <a href="../hotel2.html" class="w3-bar-item w3-button w3-padding"><i
+                                        class="fa fa-bank fa-fw"></i>  Aonang Buri Resort</a>
+                        <a href="../hotel3.html" class="w3-bar-item w3-button w3-padding w3-blue"><i
+                                        class="fa fa-bank fa-fw"></i> Buri Tara Resort</a>
+                        <a href="../hotel4.html" class="w3-bar-item w3-button w3-padding"><i
+                                        class="fa fa-bank fa-fw"></i>  BlueSotel Krabi </a>
+                        <a href="../aboutus.html" class="w3-bar-item w3-button w3-padding"><i
+                                        class="fa fa-bars fa-fw"></i>  About
+                                Us</a>
+                        <br><br>
+                        <div>
+                                <footer class="w3-container w3-bottombar w3-topbar w3-light-grey ">
+                                        <h4></h4>
+                                        <p class="w3-center">Published by <a href="https://bmsit.ac.in" target="_blank">BMSIT&M</a></p>
+                                </footer>
+                        </div>
+                </div>
+        </nav>
+
+        <!-- Overlay effect when opening sidebar on small screens -->
+        <div class="w3-overlay w3-hide-large w3-animate-opacity" onclick="w3_close()" style="cursor:pointer"
+                title="close side menu" id="myOverlay"></div>
+
+        <!-- !PAGE CONTENT! -->
+        <div class="w3-main" style="margin-left:22vw; margin-right: 1.5vw; margin-bottom: 10vh">
+
+                <!-- Header -->
+                <header class="w3-container" style="padding-top: 5vh;">
+                        <h1><b><i class="fa"></i>Buri Tara Resort</b></h1>
+                </header>
+
+
+                <div class="container-fluid">
+                        <canvas id="mixedHotelChart"></canvas>
+                </div>
+                <hr>
+                <div class="container-fluid">
+                        <div class=" w3-half">
+                                <canvas id="spiderSingleHotel"></canvas>
+                        </div>
+                        <div class=" w3-half">
+                                <canvas id="pieSingleHotel"></canvas>
+                        </div>
+                </div>
+        
+                <div class="w3-container"  style="padding-top: 5vh">
+                                <br><hr><br>
+                                <h4 class="w3-centered w3-center"><strong>Feature-wise Reviews</strong></h4>
+                                <div id="accordion">
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class="card-link" data-toggle="collapse" href="#collapse1">
+                                                            Affordability
+                                                     </a>
+                                              </div>
+                                              <div id="collapse1" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[0] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[1] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[2] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[3] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse2">
+                                                            Amenities
+                                                     </a>
+                                              </div>
+                                              <div id="collapse2" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[4] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[5] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[6] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[7] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse3">
+                                                            Cleanliness
+                                                     </a>
+                                              </div>
+                                              <div id="collapse3" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[8] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[9] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[10] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[11] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse4">
+                                                            Customer Support
+                                                     </a>
+                                              </div>
+                                              <div id="collapse4" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[12] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[13] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[14] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[15] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse5">
+                                                            Food
+                                                     </a>
+                                              </div>
+                                              <div id="collapse5" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[16] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[17] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[18] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[19] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse6">
+                                                            Location
+                                                     </a>
+                                              </div>
+                                              <div id="collapse6" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[20] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[21] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[22] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[23] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse7">
+                                                            Payment
+                                                     </a>
+                                              </div>
+                                              <div id="collapse7" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[24] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[25] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[26] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[27] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class="collapsed card-link" data-toggle="collapse" href="#collapse8">
+                                                            Quietness
+                                                     </a>
+                                              </div>
+                                              <div id="collapse8" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[28] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[29] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[30] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[31] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse9">
+                                                            Staff
+                                                     </a>
+                                              </div>
+                                              <div id="collapse9" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[32] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[33] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[34] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[35] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse10">
+                                                            View
+                                                     </a>
+                                              </div>
+                                              <div id="collapse10" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[36] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[37] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[38] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[39] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                         
+                                       <div class="card">
+                                              <div class="card-header">
+                                                     <a class=" collapsed card-link" data-toggle="collapse" href="#collapse11">
+                                                            Wi-Fi/ Internet
+                                                     </a>
+                                              </div>
+                                              <div id="collapse11" class="collapse" data-parent="#accordion">
+                                                     <div class="card-body">
+                                                            <table class="w3-table w3-striped w3-white w3-bordered w3-border">
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[40] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[41] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[42] }}"</td>
+                                                                   </tr>
+                                                                   <tr>
+                                                                          <td><i class="fa fa-comment w3-text-blue w3-large"></i></td>
+                                                                          <td>"{{ c3[43] }}"</td>
+                                                                   </tr>
+                                                            </table>
+                                                     </div>
+                                              </div>
+                                       </div>
+                                       <!--accordion-->
+                                </div>
+                                <!--accordion ka baap-->
+                         </div>
+        </div>
+
+        <script>
+                var parsed3 = JSON.parse('{{h3 | tojson}}');
+                let mixedHotelChart = document.getElementById('mixedHotelChart').getContext('2d');
+                let popChart = new Chart(mixedHotelChart, {
+                        type: 'bar',
+                        data: {
+                                labels: ['Affordability', 'Amenities', 'Cleanliness',
+                                        'Customer Support', 'Food',
+                                        'Location', 'Quietness', 'Staff', 'View', 'Payment',
+                                        'Wifi'
+                                ],
+                                datasets: [{
+                                        label: "Buri Tara Resort",
+                                        data: parsed3,
+                                        backgroundColor: [
+                                                'rgba(255, 99, 132, 0.6)',
+                                                'rgba(54, 162, 235, 0.6)',
+                                                'rgba(255, 206, 86, 0.6)',
+                                                'rgba(75, 192, 192, 0.6)',
+                                                'rgba(25, 0, 216, 0.6)',
+                                                'rgba(255, 99, 132, 0.6)',
+                                                'rgba(137, 0, 196, 0.6)',
+                                                'rgba(15, 2, 0, 0.6)',
+                                                'rgba(255, 159, 64, 0.6)',
+                                                'rgba(255, 33, 0, 0.6)',
+                                                'rgba(75, 192, 192, 0.6)'
+                                        ],
+                                        borderWidth: 0.5,
+                                        borderColor: [
+                                                'rgba(255, 99, 132,0.8)',
+                                                'rgba(54, 162, 235,0.8)',
+                                                'rgba(255, 206, 86,0.8)',
+                                                'rgba(75, 192, 192,0.8)',
+                                                'rgba(25, 0, 216,0.8)',
+                                                'rgba(255, 99, 132,0.8)',
+                                                'rgba(137, 0, 196,0.8)',
+                                                'rgba(15, 2, 0,0.8)',
+                                                'rgba(255, 159, 64,0.8)',
+                                                'rgba(255, 33, 0,0.8)',
+                                                'rgba(75, 192, 192,0.8)'
+                                        ],
+                                        hoverBorderWidth: 1
+
+                                }]
+                        }
+                })
+
+                let spiderSingleHotel = document.getElementById('spiderSingleHotel').getContext('2d');
+                let secondChart = new Chart(spiderSingleHotel, {
+                        type: 'radar',
+                        data: {
+                                labels: ['Affordability', 'Amenities', 'Cleanliness',
+                                        'Customer Support', 'Food',
+                                        'Location', 'Quietness', 'Staff', 'View', 'Payment',
+                                        'Wifi'
+                                ],
+                                datasets: [{
+                                        label: "Buri Tara Resort",
+                                        data: [30.45, 12.27, 66.27, 70.86, 45.07, 59.25,
+                                                69.54, 62.9, 45.38, 41.48, 2.71
+                                        ],
+                                        backgroundColor: 'rgba(25, 0, 216, 0.6)',
+                                        borderWidth: 2,
+                                        borderColor: 'rgba(25, 0, 216, 0.9)',
+                                        hoverBorderWidth: 4
+                                }]
+                        }
+                })
+
+
+                let pieSingleHotel = document.getElementById('pieSingleHotel').getContext('2d');
+                let thirdChart = new Chart(pieSingleHotel, {
+                        type: 'doughnut',
+                        data: {
+                                labels: ["good", "bad"],
+                                datasets: [{
+                                        data: [4.5, 5.5],
+                                        backgroundColor: [
+                                                'rgba(33,100,33,0.7)',
+                                                'rgba(255,33,0.0.6)'
+                                        ],
+                                        borderWidth: 0.5,
+                                        borderColor: [
+                                                'rgba(33,100,33,0.8)',
+                                                'rgba(255,33,0.0.7)'
+                                        ],
+                                        hoverBorderWidth: 2
+                                }]
+                        }
+                })
+
+                // get the sidebar
+                var mySidebar = document.getElementById("mySidebar");
+
+                // get the div with overlay effect
+                var overlayBg = document.getElementById("myOverlay");
+
+                // toggle between showing and hiding the sidebar, and  overlay 
+                function w3_open() {
+                        if (mySidebar.style.display === 'block') {
+                                mySidebar.style.display = 'none';
+                                overlayBg.style.display = "none";
+                        } else {
+                                mySidebar.style.display = 'block';
+                                overlayBg.style.display = "block";
+                        }
+                }
+
+                // Close the sidebar with the close button
+                function w3_close() {
+                        mySidebar.style.display = "none";
+                        overlayBg.style.display = "none";
+                }
+        </script>
+
+</body>
+
+</html>
